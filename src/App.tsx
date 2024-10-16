@@ -1,5 +1,12 @@
 import { useState } from "react";
 import { invoke } from "@tauri-apps/api/core";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "@/components/ui/carousel";
 import "./App.css";
 
 function App() {
@@ -12,8 +19,16 @@ function App() {
   }
 
   return (
-    <main>
-      <h1 className="text-red-500 font-bold text-3xl">Hello World!</h1>
+    <main className="flex flex-col items-center justify-center h-screen">
+      <Carousel>
+        <CarouselContent>
+          <CarouselItem>1</CarouselItem>
+          <CarouselItem>2</CarouselItem>
+          <CarouselItem>3</CarouselItem>
+        </CarouselContent>
+        <CarouselPrevious />
+        <CarouselNext />
+      </Carousel>
     </main>
   );
 }
