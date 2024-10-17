@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { useToast } from "@/hooks/use-toast";
 import { invoke } from "@tauri-apps/api/core";
 import {
@@ -12,14 +11,7 @@ import { Button } from "@/components/ui/button";
 import "./App.css";
 
 function App() {
-  const [greetMsg, setGreetMsg] = useState("");
-  const [name, setName] = useState("");
   const { toast } = useToast();
-
-  async function greet() {
-    // Learn more about Tauri commands at https://tauri.app/develop/calling-rust/
-    setGreetMsg(await invoke("greet", { name }));
-  }
 
   function getFilePath() {
     invoke("get_hero_grid_path")
